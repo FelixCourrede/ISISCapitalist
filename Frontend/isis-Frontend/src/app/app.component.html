@@ -12,23 +12,23 @@
 </style>
 
 
-  <div class="header">
-    <div> logo monde </div>
-    <div> argent </div>
-    <div> multiplicateur </div>
-    <div> ID du joueur </div>
+<div class="header">
+  <div> logo monde </div>
+  <div> argent </div>
+  <div> multiplicateur </div>
+  <div> ID du joueur </div>
+</div>
+<div class="main">
+  <div> liste des boutons de menu </div>
+  <div class="product">
+    <app-product [money]="world.money" [product]="world.products[0]" />
+    <app-product [money]="world.money" [product]="world.products[1]" />
+    <app-product [money]="world.money" [product]="world.products[2]" />
+    <app-product [money]="world.money" [product]="world.products[3]" />
+    <app-product [money]="world.money" [product]="world.products[4]" />
+    <app-product [money]="world.money" [product]="world.products[5]" />
   </div>
-  <div class="main">
-    <div> liste des boutons de menu </div>
-    <div class="product">
-      <div> premier produit </div>
-      <div> second produit </div>
-      <div> troisième produit </div>
-      <div> quatrième produit </div>
-      <div> cinquième produit </div>
-      <div> sixième produit </div>
-    </div>
-  </div>
+</div>
 
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
