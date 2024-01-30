@@ -77,50 +77,7 @@ module.exports = {
         },
       ],
     },
-    {
-      id: 4,
-      name: objet4,
-      logo: "icones/premierproduit.jpg",
-      cout: 4,
-      croissance: 1.07,
-      revenu: 1,
-      vitesse: 500,
-      quantite: 1,
-      timeleft: 0,
-      managerUnlocked: false,
-      palliers: [
-        {
-          name: "palier1",
-          logo: "icones/premierpalier.jpg",
-          seuil: 20,
-          idcible: 1,
-          ratio: 2,
-          typeratio: "vitesse",
-          unlocked: "false",
-        },
-        {
-          name: "palier2",
-          logo: "icones/deuxiemepalier.jpg",
-          seuil: 75,
-          idcible: 1,
-          ratio: 2,
-          typeratio: "vitesse",
-          unlocked: "false",
-        },
-      ],
-    },
-  ],
-
-  allunlocks: [
-    {
-      name: "unlock1",
-      logo: "icones/premierunlock.jpg",
-      seuil: 30,
-      idcible: 0,
-      ratio: 2,
-      typeratio: "gain",
-      unlocked: "false",
-    },
+  
   ],
 
   upgrades: [
