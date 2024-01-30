@@ -1,7 +1,5 @@
-
-
-
-export const typeDefs = gql`
+const {gql} = require("apollo-server-express");
+module.exports = gql`
 
 enum RatioType {
     gain
@@ -18,8 +16,6 @@ enum RatioType {
     unlocked: Boolean
    }
    type Product {
-   Page 
-   12
     id: Int!
     name: String
     logo: String
