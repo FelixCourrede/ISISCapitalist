@@ -11,10 +11,10 @@ import { Product } from '../world';
 export class ProductComponent {
 
   @Input()
-  product : Product = new Product()
+  product: Product = new Product()
 
   @Input()
-  money : number = 0
+  money: number = 0
 
 
 }
