@@ -10,7 +10,7 @@ module.exports = {
   products: [
     {
       id: 1,
-      name: "objet1",
+      name: "premier produit",
       logo: "icones/premierproduit.jpg",
       cout: 4,
       croissance: 1.07,
@@ -21,65 +21,44 @@ module.exports = {
       managerUnlocked: false,
       palliers: [
         {
-          name: "palier1",
+          name: "Nom du premier palier",
           logo: "icones/premierpalier.jpg",
           seuil: 20,
           idcible: 1,
           ratio: 2,
           typeratio: "vitesse",
-          unlocked: "false",
+          unlocked: false,
         },
         {
-          name: "palier2",
+          name: "Nom deuxième palier",
           logo: "icones/deuxiemepalier.jpg",
           seuil: 75,
           idcible: 1,
           ratio: 2,
           typeratio: "vitesse",
-          unlocked: "false",
+          unlocked: false,
         },
       ],
     },
+
+    
     {
       id: 2,
-      name: "objet2",
+      name: "Deuxième produit",
       logo: "icones/deuxiemeproduit.jpg",
     },
-    {
-      id: 3,
-      name: "objet3",
-      logo: "icones/premierproduit.jpg",
-      cout: 4,
-      croissance: 1.07,
-      revenu: 1,
-      vitesse: 500,
-      quantite: 1,
-      timeleft: 0,
-      managerUnlocked: false,
-      palliers: [
-        {
-          name: "palier1",
-          logo: "icones/premierpalier.jpg",
-          seuil: 20,
-          idcible: 1,
-          ratio: 2,
-          typeratio: "vitesse",
-          unlocked: "false",
-        },
-        {
-          name: "palier2",
-          logo: "icones/deuxiemepalier.jpg",
-          seuil: 75,
-          idcible: 1,
-          ratio: 2,
-          typeratio: "vitesse",
-          unlocked: "false",
-        },
-      ],
-    },
-  
   ],
-
+  allunlocks: [
+    {
+      name: "Nom du premier unlock général",
+      logo: "icones/premierunlock.jpg",
+      seuil: 30,
+      idcible: 0,
+      ratio: 2,
+      typeratio: "gain",
+      unlocked: false,
+    },
+  ],
   upgrades: [
     {
       name: "Nom du premier upgrade",
@@ -88,7 +67,7 @@ module.exports = {
       idcible: 1,
       ratio: 3,
       typeratio: "gain",
-      unlocked: "false",
+      unlocked: false,
     },
   ],
   angelupgrades: [
@@ -99,9 +78,10 @@ module.exports = {
       idcible: 0,
       ratio: 3,
       typeratio: "gain",
-      unlocked: "false",
+      unlocked: false,
     },
   ],
+
   managers: [
     {
       name: "Wangari Maathai",
@@ -110,7 +90,7 @@ module.exports = {
       idcible: 1,
       ratio: 0,
       typeratio: "gain",
-      unlocked: "false",
+      unlocked: false,
     },
   ],
 };
