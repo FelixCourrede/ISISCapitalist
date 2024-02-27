@@ -10,7 +10,7 @@ module.exports = {
   products: [
     {
       id: 1,
-      name: "premier produit",
+      name: "Dague",
       logo: "icones/premierproduit.jpg",
       cout: 4,
       croissance: 1.07,
@@ -21,7 +21,7 @@ module.exports = {
       managerUnlocked: false,
       palliers: [
         {
-          name: "Nom du premier palier",
+          name: "Fer",
           logo: "icones/premierpalier.jpg",
           seuil: 20,
           idcible: 1,
@@ -30,7 +30,7 @@ module.exports = {
           unlocked: false,
         },
         {
-          name: "Nom deuxième palier",
+          name: "Acier",
           logo: "icones/deuxiemepalier.jpg",
           seuil: 75,
           idcible: 1,
@@ -44,8 +44,69 @@ module.exports = {
     
     {
       id: 2,
-      name: "Deuxième produit",
+      name: "Epée",
       logo: "icones/deuxiemeproduit.jpg",
+      cout: 4,
+      croissance: 1.07,
+      revenu: 1,
+      vitesse: 500,
+      quantite: 1,
+      timeleft: 0,
+      managerUnlocked: false,
+      paliers: [
+        {
+          name: "Fer",
+          logo: "icones/deuxiemepalier.jpg",
+          seuil: 75,
+          idcible: 1,
+          ratio: 2,
+          typeratio: "vitesse",
+          unlocked: false,
+        },
+        {
+          name: "Acier",
+          logo: "icones/deuxiemepalier.jpg",
+          seuil: 75,
+          idcible: 1,
+          ratio: 2,
+          typeratio: "vitesse",
+          unlocked: false,
+        },
+
+      ]
+    },
+    {
+      id: 2,
+      name: "Hache",
+      logo: "icones/deuxiemeproduit.jpg",
+      cout: 4,
+      croissance: 1.07,
+      revenu: 1,
+      vitesse: 500,
+      quantite: 1,
+      timeleft: 0,
+      managerUnlocked: false,
+      paliers: [
+        {
+          name: "Fer",
+          logo: "icones/deuxiemepalier.jpg",
+          seuil: 75,
+          idcible: 1,
+          ratio: 2,
+          typeratio: "vitesse",
+          unlocked: false,
+        },
+        {
+          name: "Acier",
+          logo: "icones/deuxiemepalier.jpg",
+          seuil: 75,
+          idcible: 1,
+          ratio: 2,
+          typeratio: "vitesse",
+          unlocked: false,
+        },
+
+      ]
     },
   ],
   allunlocks: [
