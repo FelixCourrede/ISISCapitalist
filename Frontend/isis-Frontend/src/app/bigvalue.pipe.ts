@@ -7,8 +7,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class BigvaluePipe implements PipeTransform {
 
   transform(valeur: number, args?: any): string {
-    
-    let res: string;
+    let res: string = '';
     if (valeur < 1000)
       res = valeur.toFixed(2);
     else if (valeur < 1000000)
