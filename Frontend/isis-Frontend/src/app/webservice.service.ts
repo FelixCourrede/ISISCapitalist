@@ -7,14 +7,14 @@ import { GET_WORLD } from './Graphrequests';
 })
 export class WebserviceService {
   //server = 'http://localhost.4000/';
-  server = 'https://isiscapitalistgraphql.kk.kurasawa.fr/graphql';
+  server = 'https://isiscapitalistgraphql.kk.kurasawa.fr/';
   user = '';
 
   constructor() { }
 
   createClient() {
     return new Client({
-      url: this.server,
+      url: this.server+'graphql',
       exchanges: [fetchExchange],
       fetchOptions: () => {
         return {

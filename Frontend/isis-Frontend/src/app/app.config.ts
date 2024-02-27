@@ -4,7 +4,6 @@ import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { provideAnimations } from '@angular/platform-browser/animations';
 
-import {MatProgressBarModule} from '@angular/material/progress-bar'
 
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes), provideAnimations(), provideAnimations(), provideAnimations()]
