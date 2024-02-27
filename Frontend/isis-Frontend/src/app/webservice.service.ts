@@ -6,7 +6,8 @@ import { GET_WORLD } from './Graphrequests';
   providedIn: 'root'
 })
 export class WebserviceService {
-  server = 'http://localhost.4000/';
+  //server = 'http://localhost.4000/';
+  server = 'https://isiscapitalistgraphql.kk.kurasawa.fr/graphql';
   user = '';
 
   constructor() { }

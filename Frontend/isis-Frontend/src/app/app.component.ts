@@ -15,8 +15,11 @@ import { ProductComponent } from './product/product.component';
 export class AppComponent {
   title = 'isis-Frontend';
 
+  server = '';
+
   world = new World();
   constructor(private service: WebserviceService) {
+    this.server = service.server
     service.getWorld().then(
       world => {
         this.world = world.data.getWorld;
