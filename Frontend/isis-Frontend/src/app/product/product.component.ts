@@ -22,6 +22,7 @@ export class ProductComponent implements OnChanges {
   ngOnChanges(changes: SimpleChanges) {
     if (changes['product']) {
       console.log('La valeur a changé de', changes['product'].previousValue, 'à', changes['product'].currentValue);
+      console.log(this.product)
     }
   }
 

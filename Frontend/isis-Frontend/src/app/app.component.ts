@@ -21,9 +21,11 @@ export class AppComponent {
   world = new World();
   constructor(private service: WebserviceService) {
     this.server = service.server
+    console.log("constructeur")
     service.getWorld().then(
       world => {
-        this.world = world.data.getWorld;
+        console.log("ok request")
+        this.world = world.data.getWorld || new World();
       }
     );
   }
