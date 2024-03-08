@@ -25,10 +25,11 @@ export class ProductComponent implements OnChanges {
       console.log(this.product)
     }
   }
-
+  /** 
   ngOnInit() {
     setInterval(() => { this.calcScore(); }, 100);
   }
+
 
   calcScore() {
     if (timeleft == 0) { return NONE_TYPE }
@@ -43,9 +44,8 @@ export class ProductComponent implements OnChanges {
           this.product.timeleft) / this.product.vitesse) * 100
       }
     }
-
   }
-
+*/
   @Input()
   money: number = 0
 
