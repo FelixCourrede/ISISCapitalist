@@ -11,7 +11,7 @@ module.exports = {
     {
       id: 1,
       name: "Dague",
-      logo: "icones/premierproduit.jpg",
+      logo: "./src/icones/Dague.jpg",
       cout: 4,
       croissance: 1.07,
       revenu: 1,
@@ -22,7 +22,7 @@ module.exports = {
       palliers: [
         {
           name: "Fer",
-          logo: "icones/premierpalier.jpg",
+          logo: "./src/icones/Dague.jpg",
           seuil: 20,
           idcible: 1,
           ratio: 2,
@@ -31,7 +31,7 @@ module.exports = {
         },
         {
           name: "Acier",
-          logo: "icones/deuxiemepalier.jpg",
+          logo: "./src/icones/Dague.jpg",
           seuil: 75,
           idcible: 1,
           ratio: 2,
