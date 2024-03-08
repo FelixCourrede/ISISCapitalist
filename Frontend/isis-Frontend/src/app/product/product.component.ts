@@ -25,6 +25,10 @@ export class ProductComponent implements OnChanges {
       console.log(this.product)
     }
   }
+
+  startFabrication() {
+
+  }
   /** 
   ngOnInit() {
     setInterval(() => { this.calcScore(); }, 100);
@@ -32,7 +36,7 @@ export class ProductComponent implements OnChanges {
 
 
   calcScore() {
-    if (timeleft == 0) { return NONE_TYPE }
+    if (timeleft == 0) {}
     else {
       timeleft = Date.now() - this.lastupdate;
       if (timeleft <= 0) {
