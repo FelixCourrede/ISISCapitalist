@@ -19,6 +19,8 @@ export class ProductComponent implements OnChanges {
 
   progressbarvalue = 0
 
+  button=document.querySelector("button"+Product.name);
+
   ngOnChanges(changes: SimpleChanges) {
     if (changes['product']) {
       console.log('La valeur a changé de', changes['product'].previousValue, 'à', changes['product'].currentValue);
