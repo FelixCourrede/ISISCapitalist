@@ -7,13 +7,38 @@
 </div>
 <div class="main">
   <div> liste des boutons de menu </div>
+  <div *ngIf="showManagers" class="modal">
+    <div>
+      <h1 class="title">Managers make you feel better !</h1>
+    </div>
+    <div>
+      <div *ngFor="let manager of world.managers.palier">
+        <div *ngIf="!manager.unlocked" class="managerslayout">
+          <div>
+            <div class="logo"><img class="round" [attr.src]="server+manager.logo" /> </div>
+          </div>
+          <div>
+            <div class="managername"> {{ manager.name}} </div>
+            <div class="managercible"> {{ world.products.product[manager.idcible-1].name }} </div>
+            <div class="managercost"> {{ manager.seuil}} </div>
+          </div>
+          <div>
+            <div class="hirebutton" (click)="hireManager(manager)"
+              [ngClass]="{'selectable' : (world.money >= manager.seuil)}">Hire !</div>
+          </div>
+        </div>
+      </div>
+      <button class="closebutton" mat-raised- button color="primary"
+        (click)="showManagers = !showManagers">Close</button>
+    </div>
+  </div>
   <div class="product">
-    <app-product [money]="world.money" [product]="world.products[0]" />
-    <app-product [money]="world.money" [product]="world.products[1]" />
-    <app-product [money]="world.money" [product]="world.products[2]" />
-    <app-product [money]="world.money" [product]="world.products[3]" />
-    <app-product [money]="world.money" [product]="world.products[4]" />
-    <app-product [money]="world.money" [product]="world.products[5]" />
+    <app-product [money]="world.money" [product]="world.products[0]" (notifyProduction)="onProductionDone($event)" />
+    <app-product [money]="world.money" [product]="world.products[1]" (notifyProduction)="onProductionDone($event)" />
+    <app-product [money]="world.money" [product]="world.products[2]" (notifyProduction)="onProductionDone($event)" />
+    <app-product [money]="world.money" [product]="world.products[3]" (notifyProduction)="onProductionDone($event)" />
+    <app-product [money]="world.money" [product]="world.products[4]" (notifyProduction)="onProductionDone($event)" />
+    <app-product [money]="world.money" [product]="world.products[5]" (notifyProduction)="onProductionDone($event)" />
   </div>
 </div>
 

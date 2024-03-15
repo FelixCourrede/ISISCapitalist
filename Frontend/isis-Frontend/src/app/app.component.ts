@@ -30,5 +30,10 @@ export class AppComponent {
     );
   }
 
+  onProductionDone(Product p) {
+    this.world.score += p.cout
+    p.cout= p.cout + p.cout*p.croissance
+  }
+
   
 }

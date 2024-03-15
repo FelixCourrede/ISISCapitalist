@@ -3,12 +3,14 @@ import { Product } from '../world';
 import { MatProgressBarModule } from '@angular/material/progress-bar'
 import { BigvaluePipe } from '../bigvalue.pipe';
 import { NONE_TYPE } from '@angular/compiler';
+import { MyProgressBarComponent, Orientation } from '../progressbar.component'
+
 
 
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [MatProgressBarModule, BigvaluePipe],
+  imports: [MatProgressBarModule, MyProgressBarComponent, BigvaluePipe],
   templateUrl: './product.component.html',
   styleUrl: './product.component.css'
 })
@@ -19,7 +21,12 @@ export class ProductComponent implements OnChanges {
 
   progressbarvalue = 0
 
-  button=document.querySelector("button"+Product.name);
+  run = false
+  auto = false
+  initialValue = 0
+  orientation = Orientation.horizontal
+
+  button = document.querySelector("button" + Product.name);
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['product']) {
@@ -29,35 +36,33 @@ export class ProductComponent implements OnChanges {
   }
 
   startFabrication() {
-
+    this.run = true
   }
-  /** 
+
   ngOnInit() {
     setInterval(() => { this.calcScore(); }, 100);
   }
 
 
   calcScore() {
-    if (timeleft == 0) {}
+    if (this.product.timeleft == 0) { }
     else {
-      timeleft = Date.now() - this.lastupdate;
-      if (timeleft <= 0) {
-        timeleft = 0;
-        thisprogressbarvalue = 0
-      }
-      else {
-        this.progressbarvalue = ((this.product.vitesse -
-          this.product.timeleft) / this.product.vitesse) * 100
+      let elapsetime = Date.now() - this.product.lastupdate;
+      this.product.lastupdate = Date.now()
+      this.product.timeleft = elapsetime
+      if (this.product.timeleft <= 0) {
+        this.product.timeleft = 0;
+        this.run = false
+        // on prévient le composant parent que ce produit a généré son revenu.
+        this.notifyProduction.emit(this.product);
       }
     }
   }
-*/
+
   @Input()
   money: number = 0
 
   @Output()
   notifyProduction: EventEmitter<Product> = new
     EventEmitter<Product>();
-
-
 }

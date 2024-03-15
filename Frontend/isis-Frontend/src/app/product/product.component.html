@@ -1,5 +1,12 @@
 <p>{{product.name}}</p>
-<button id="button"+{{product.name}}>{{product.logo}}</button>
-<mat-progress-bar class="progressbar" [value]="progressbarvalue"></mat-progress-bar>
+<input type="button" value ="icône placeholder"/>
+<app-my-progress-bar [run]="run" [auto]="auto"
+               frontcolor="#008800"
+               backcolor="#FFFFFF"
+               [orientation]="orientation" 
+               [vitesse]="product.vitesse"
+               [initialValue]="initialValue">
+</app-my-progress-bar>
+
 
 
