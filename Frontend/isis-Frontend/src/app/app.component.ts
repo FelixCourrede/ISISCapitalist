@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { WebserviceService } from './webservice.service';
-import { World } from './world';
+import { Palier, World } from './world';
+import { Product } from './world';
 import { ProductComponent } from './product/product.component';
 import { BigvaluePipe } from './bigvalue.pipe';
 
@@ -30,10 +31,18 @@ export class AppComponent {
     );
   }
 
-  onProductionDone(Product p) {
+  onProductionDone(p: Product) {
     this.world.score += p.cout
-    p.cout= p.cout + p.cout*p.croissance
+    p.cout = p.cout + p.cout * p.croissance
   }
 
-  
+  hireManager(manager: Palier) {
+    this.world.money = this.world.money - manager.seuil
+    manager.unlocked = true
+    let produit = this.world.products.find(p => p.id === manager.idcible)
+    if (produit)
+      produit.managerUnlocked = true
+  }
+
+
 }
