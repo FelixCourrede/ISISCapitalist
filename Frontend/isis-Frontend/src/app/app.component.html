@@ -3,8 +3,9 @@
   <img [attr.src]="server+'/'+world.logo" />
   <span [innerHTML]="world.money | bigvalue"> </span>
   <span id="multiplier"> {{world.angelbonus}} </span>
+  <span id ="score"> {{world.score}}</span>
   <div> ID du joueur </div>
-  <button id="commutateur" onclick=""></button>
+  <button id="commutateur" onclick="">Commutateur</button>
 </div>
 <div class="main">
   <div>
@@ -47,13 +48,14 @@
   </div>
 
   <div class="product">
-    <app-product [money]="world.money" [prod]="world.products[0]" (notifyProduction)="onProductionDone($event)" />
-    <app-product [money]="world.money" [prod]="world.products[1]" (notifyProduction)="onProductionDone($event)" />
-    <app-product [money]="world.money" [prod]="world.products[2]" (notifyProduction)="onProductionDone($event)" />
-    <app-product [money]="world.money" [prod]="world.products[3]" (notifyProduction)="onProductionDone($event)" />
-    <app-product [money]="world.money" [prod]="world.products[4]" (notifyProduction)="onProductionDone($event)" />
-    <app-product [money]="world.money" [prod]="world.products[5]" (notifyProduction)="onProductionDone($event)" />
+    <app-product [money]="world.money" [prod]="world.products[0]" (notifyProduction)="onProductionDone($event)" [qtmulti]="commutateur"/>
+    <app-product [money]="world.money" [prod]="world.products[1]" (notifyProduction)="onProductionDone($event)" [qtmulti]="commutateur"/>
+    <app-product [money]="world.money" [prod]="world.products[2]" (notifyProduction)="onProductionDone($event)" [qtmulti]="commutateur"/>
+    <app-product [money]="world.money" [prod]="world.products[3]" (notifyProduction)="onProductionDone($event)" [qtmulti]="commutateur"/>
+    <app-product [money]="world.money" [prod]="world.products[4]" (notifyProduction)="onProductionDone($event)" [qtmulti]="commutateur"/>
+    <app-product [money]="world.money" [prod]="world.products[5]" (notifyProduction)="onProductionDone($event)" [qtmulti]="commutateur"/>
   </div>
+
 </div>
 
 <router-outlet />

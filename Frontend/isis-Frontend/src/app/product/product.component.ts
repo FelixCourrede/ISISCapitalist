@@ -10,7 +10,7 @@ import { MyProgressBarComponent, Orientation } from '../progressbar.component'
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [MatProgressBarModule, BigvaluePipe],
+  imports: [MatProgressBarModule, MyProgressBarComponent, BigvaluePipe],
   templateUrl: './product.component.html',
   styleUrl: './product.component.css'
 })
@@ -42,7 +42,6 @@ calcMaxCanBuy(){
   @Input()
   set money(value: number){
     this.money=value
-
   }
 
 
@@ -85,7 +84,6 @@ calcMaxCanBuy(){
         // on prévient le composant parent que ce produit a généré son revenu.
         this.notifyProduction.emit(this.product);
         if (this.auto == true) {
-          this.startFabrication()
         }
       }
     }

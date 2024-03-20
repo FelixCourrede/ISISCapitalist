@@ -29,7 +29,6 @@ export function commuter(valeur: any){
 
 export class AppComponent {
   title = 'isis-Frontend';
-
   server = '';
 
   commutateur: any =1;
