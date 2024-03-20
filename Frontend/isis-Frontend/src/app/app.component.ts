@@ -6,16 +6,16 @@ import { Product } from './world';
 import { ProductComponent } from './product/product.component';
 import { BigvaluePipe } from './bigvalue.pipe';
 import { CommonModule, NgFor, NgIf } from '@angular/common';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 //Commutateur
-export function commuter(valeur: any){
-  var k=new Array<any>();
+export function commuter(valeur: any) {
+  var k = new Array<any>();
   k.push(1, 10, 100, "Max");
-  for (let i = 0; i < k.length; i++){
-    if (k[i]==valeur){
-      valeur=k[i+1]
-      return(valeur)
+  for (let i = 0; i < k.length; i++) {
+    if (k[i] == valeur) {
+      valeur = k[i + 1]
+      return (valeur)
     }
   }
   return valeur
@@ -34,22 +34,23 @@ export function commuter(valeur: any){
 export class AppComponent {
   title = 'isis-Frontend';
   server = '';
+  username = "user";
 
   //gestion du commutateur
-  valeurCommutateur=[1,10,100,'Max']
-  commutateur: any =1;
+  valeurCommutateur = [1, 10, 100, 'Max']
+  commutateur: any = 1;
 
-  commutateurSwitch(){
-    for (let k=0; k<3; k++){
-      if (this.commutateur==this.valeurCommutateur[k]){
-        this.commutateur=this.valeurCommutateur[k+1]
+  commutateurSwitch() {
+    for (let k = 0; k < 3; k++) {
+      if (this.commutateur == this.valeurCommutateur[k]) {
+        this.commutateur = this.valeurCommutateur[k + 1]
         console.log(this.commutateur)
-        return(this.commutateur)
+        return (this.commutateur)
       }
     }
-    this.commutateur=1;
+    this.commutateur = 1;
     console.log(this.commutateur)
-    return(this.commutateur)
+    return (this.commutateur)
   }
 
   //gestion du monde
@@ -64,6 +65,8 @@ export class AppComponent {
       }
     );
   }
+
+
 
   //prévient de la production d'un produit et ajoute le coût au score
   onProductionDone(p: Product) {
@@ -82,11 +85,18 @@ export class AppComponent {
   }
 
   //pour montrer ou non les managers dans le html
-  showManagers=false
+  showManagers = false
 
   showManagersOnClick() {
     this.showManagers = !this.showManagers
   }
+
+  onUsernameChanged() {
+    this.username = localStorage.getItem("username");
+    localStorage.setItem("username", this.username);
+
+  }
+
 
 
 

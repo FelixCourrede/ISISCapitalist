@@ -4,7 +4,7 @@
   <span [innerHTML]="world.money | bigvalue"> </span>
   <span id="multiplier"> {{world.angelbonus}} </span>
   <span [innerHTML]="world.score | bigvalue"> </span>
-  <div> ID du joueur </div>
+  <input type="text" [(ngModel)]="username" (change)="onUsernameChanged()"/>
   <button id="commutateur" (click)="commutateurSwitch()">{{commutateur}}</button>
 </div>
 <div class="main">
