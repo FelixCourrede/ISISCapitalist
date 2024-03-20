@@ -97,7 +97,6 @@ _money:any;
         this.notifyProduction.emit(this.product);
         if (this.product.managerUnlocked) {
           this.startFabrication()
-          console.log("manager au boulot")
         }
       }
     }
