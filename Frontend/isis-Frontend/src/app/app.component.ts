@@ -8,26 +8,32 @@ import { BigvaluePipe } from './bigvalue.pipe';
 import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
-//Commutateur
 export function commuter(valeur: any) {
   var k = new Array<any>();
-  k.push(1, 10, 100, "Max");
+  k.push(1, 10, 100, 'Max');
   for (let i = 0; i < k.length; i++) {
     if (k[i] == valeur) {
-      valeur = k[i + 1]
-      return (valeur)
+      valeur = k[i + 1];
+      return valeur;
     }
   }
-  return valeur
+  return valeur;
 }
 
 //Composant
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ProductComponent, BigvaluePipe, NgIf, NgFor, CommonModule, MatSnackBarModule],
+  imports: [
+    RouterOutlet,
+    ProductComponent,
+    BigvaluePipe,
+    NgIf,
+    NgFor,
+    CommonModule,
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 
 //export de la classe
@@ -55,33 +61,30 @@ export class AppComponent {
 
   //gestion du monde
   world = new World();
-  constructor(private service: WebserviceService, private snackBar: MatSnackBarModule) {
-    this.server = service.server
-    console.log("constructeur")
-    service.getWorld().then(
-      world => {
-        console.log("ok request")
-        this.world = world.data.getWorld || new World();
-      }
-    );
+  constructor(private service: WebserviceService) {
+    this.server = service.server;
+    console.log('constructeur');
+    service.getWorld().then((world) => {
+      console.log('ok request');
+      this.world = world.data.getWorld || new World();
+    });
   }
 
 
 
   //prévient de la production d'un produit et ajoute le coût au score
   onProductionDone(p: Product) {
-    this.world.score += p.cout
-    this.world.money += p.cout
-    p.cout = p.cout + p.cout * p.croissance
+      this.world.score += p.cout;
+      this.world.money += p.cout;
+      p.cout = p.cout + p.cout * p.croissance;
   }
 
   //engagement de managers
   hireManager(manager: Palier) {
-    this.world.money = this.world.money - manager.seuil
-    manager.unlocked = true
-    let produit = this.world.products.find(p => p.id === manager.idcible)
-    if (produit)
-      produit.managerUnlocked = true
+    this.world.money = this.world.money - manager.seuil;
+    manager.unlocked = true;
+    let produit = this.world.products.find((p) => p.id === manager.idcible);
+    if (produit) produit.managerUnlocked = true;
   }
 
   //pour montrer ou non les managers, upgrades et patrons dans le html
@@ -90,7 +93,7 @@ export class AppComponent {
   showAngels = false
 
   showManagersOnClick() {
-    this.showManagers = !this.showManagers
+    this.showManagers = !this.showManagers;
   }
 /*
   onUsernameChanged() {

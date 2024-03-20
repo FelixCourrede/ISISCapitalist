@@ -27,6 +27,7 @@ export class ProductComponent implements OnChanges {
 
   progressbarvalue = 0
   maxAchat = 0
+  coutTotal= 0
 
   //Gestion du commutateur
   _commutateur:any;
@@ -37,10 +38,12 @@ export class ProductComponent implements OnChanges {
  
   }
 
-//calcul du maximum possible qu'on peut acheter
+  getMaxAchat(){
+    return this.maxAchat
+  }
+
 calcMaxCanBuy(){
   let max=(this.product.croissance**this.product.quantite)*this.product.cout;
-  console.log(max)
   this.maxAchat=max;
 }
 
@@ -72,7 +75,17 @@ _money:any;
   startFabrication() {
     this.run = true
     this.product.lastupdate = Date.now()
-    this.product.timeleft = this.product.vitesse
+    if (this._commutateur=='Max'){
+      this.product.timeleft=this.product.vitesse*this.maxAchat
+      let coutTotal= this.product.cout*this.maxAchat
+    }
+    else{
+      this.product.timeleft = this.product.vitesse*this._commutateur
+      let coutTotal=this.product.cout*this.commutateur
+    }
+
+    this.notifyCost.emit(this.coutTotal)
+
   }
 
   //initialisation de la classe
@@ -110,4 +123,7 @@ _money:any;
   @Output()
   notifyProduction: EventEmitter<Product> = new
     EventEmitter<Product>();
+  
+    @Output()
+  notifyCost: EventEmitter<number> = new EventEmitter<number>()
 }
