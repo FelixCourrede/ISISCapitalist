@@ -48,6 +48,7 @@ export class AppComponent {
 
   onProductionDone(p: Product) {
     this.world.score += p.cout
+    this.world.money += p.cout
     p.cout = p.cout + p.cout * p.croissance
   }
 
