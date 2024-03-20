@@ -109,7 +109,7 @@ module.exports = {
       ]
     },
     {
-      id: 3,
+      id: 4,
       name: "Arc",
       logo: "icones/deuxiemeproduit.jpg",
       cout: 4,
@@ -141,7 +141,7 @@ module.exports = {
       ]
     },
     {
-      id: 3,
+      id: 5,
       name: "Espadon",
       logo: "icones/deuxiemeproduit.jpg",
       cout: 4,
@@ -174,7 +174,7 @@ module.exports = {
       ]
     },
     {
-      id: 3,
+      id: 6,
       name: "Arbalète",
       logo: "icones/deuxiemeproduit.jpg",
       cout: 4,
@@ -251,5 +251,14 @@ module.exports = {
       typeratio: "gain",
       unlocked: false,
     },
+    {
+      name: "Eudes",
+      logo: "icones/WangariMaathai.jpg",
+      seuil: 10,
+      idcible: 1,
+      ratio: 0,
+      typeratio: "gain",
+      unlocked: false,
+    }
   ],
 };
