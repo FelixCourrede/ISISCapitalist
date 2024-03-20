@@ -45,6 +45,7 @@ calcMaxCanBuy(){
   }
 
 
+
   run = false
   auto = false
   initialValue = 0
