@@ -31,7 +31,21 @@ export class AppComponent {
   title = 'isis-Frontend';
   server = '';
 
+  valeurCommutateur=[1,10,100,'Max']
   commutateur: any =1;
+
+  commutateurSwitch(){
+    for (let k=0; k<3; k++){
+      if (this.commutateur==this.valeurCommutateur[k]){
+        this.commutateur=this.valeurCommutateur[k+1]
+        console.log(this.commutateur)
+        return(this.commutateur)
+      }
+    }
+    this.commutateur=1;
+    console.log(this.commutateur)
+    return(this.commutateur)
+  }
 
 
   world = new World();
