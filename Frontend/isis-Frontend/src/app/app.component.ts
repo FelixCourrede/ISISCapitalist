@@ -84,18 +84,20 @@ export class AppComponent {
       produit.managerUnlocked = true
   }
 
-  //pour montrer ou non les managers dans le html
+  //pour montrer ou non les managers, upgrades et patrons dans le html
   showManagers = false
+  showUpgrades = false
+  showAngels = false
 
   showManagersOnClick() {
     this.showManagers = !this.showManagers
   }
-
+/*
   onUsernameChanged() {
     this.username = localStorage.getItem("username");
     localStorage.setItem("username", this.username);
-
   }
+  */
 
 
 
