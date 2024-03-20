@@ -7,6 +7,18 @@ import { ProductComponent } from './product/product.component';
 import { BigvaluePipe } from './bigvalue.pipe';
 import { CommonModule, NgFor, NgIf } from '@angular/common';
 
+export function commuter(valeur: any){
+  var k=new Array<any>();
+  k.push(1, 10, 100, "Max");
+  for (let i = 0; i < k.length; i++){
+    if (k[i]==valeur){
+      valeur=k[i+1]
+      return(valeur)
+    }
+  }
+  return valeur
+}
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -19,6 +31,9 @@ export class AppComponent {
   title = 'isis-Frontend';
 
   server = '';
+
+  commutateur: any =1;
+
 
   world = new World();
   constructor(private service: WebserviceService) {

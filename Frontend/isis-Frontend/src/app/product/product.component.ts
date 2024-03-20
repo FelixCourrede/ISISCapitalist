@@ -10,10 +10,11 @@ import { MyProgressBarComponent, Orientation } from '../progressbar.component'
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [MatProgressBarModule, MyProgressBarComponent, BigvaluePipe],
+  imports: [MatProgressBarModule, BigvaluePipe],
   templateUrl: './product.component.html',
   styleUrl: './product.component.css'
 })
+
 export class ProductComponent implements OnChanges {
 
   product: Product = new Product()
@@ -24,6 +25,26 @@ export class ProductComponent implements OnChanges {
   }
 
   progressbarvalue = 0
+  
+  _commutateur:any;
+  @Input()
+  set commutateur(value: any){
+  this._commutateur=value
+  if(this._commutateur && this.product) this.calcMaxCanBuy();
+  }
+
+calcMaxCanBuy(){
+  let max=0;
+  max=(this.product.croissance**this.product.quantite)*this.product.cout;
+  return(max)
+}
+
+  @Input()
+  set money(value: number){
+    this.money=value
+
+  }
+
 
   run = false
   auto = false
@@ -70,8 +91,6 @@ export class ProductComponent implements OnChanges {
     }
   }
 
-  @Input()
-  money: number = 0
 
   @Output()
   notifyProduction: EventEmitter<Product> = new
