@@ -17,6 +17,7 @@ import { MyProgressBarComponent, Orientation } from '../progressbar.component'
 
 export class ProductComponent implements OnChanges {
 
+  //appel produit
   product: Product = new Product()
   @Input()
   set prod(value: Product) {
@@ -27,6 +28,7 @@ export class ProductComponent implements OnChanges {
   progressbarvalue = 0
   maxAchat = 0
 
+  //Gestion du commutateur
   _commutateur:any;
   @Input()
   set commutateur(value: any){
@@ -35,13 +37,14 @@ export class ProductComponent implements OnChanges {
  
   }
 
-
+//calcul du maximum possible qu'on peut acheter
 calcMaxCanBuy(){
   let max=(this.product.croissance**this.product.quantite)*this.product.cout;
   console.log(max)
   this.maxAchat=max;
 }
 
+//calcul de l'argent en possession
 _money:any;
   @Input()
   set money(value: number){
@@ -50,7 +53,7 @@ _money:any;
 
 
 
-
+  //prep de l'augmentation du score
   run = false
   auto = false
   initialValue = 0
@@ -65,19 +68,21 @@ _money:any;
     }
   }
 
+  //démarrage fabrication au début
   startFabrication() {
     this.run = true
     this.product.lastupdate = Date.now()
     this.product.timeleft = this.product.vitesse
   }
 
+  //initialisation de la classe
   ngOnInit() {
     setInterval(() => { this.calcScore(); }, 100);
   }
 
 
 
-
+  //calcul du score
   calcScore() {
     if (this.product.timeleft > 0) {
       let elapsetime = Date.now() - this.product.lastupdate;
@@ -101,7 +106,7 @@ _money:any;
     }
   }
 
-
+  //envoyer la notification de production à app.component
   @Output()
   notifyProduction: EventEmitter<Product> = new
     EventEmitter<Product>();

@@ -3,7 +3,7 @@
   <img [attr.src]="server+'/'+world.logo" />
   <span [innerHTML]="world.money | bigvalue"> </span>
   <span id="multiplier"> {{world.angelbonus}} </span>
-  <span id ="score"> {{world.score}}</span>
+  <span [innerHTML]="world.score | bigvalue"> </span>
   <div> ID du joueur </div>
   <button id="commutateur" (click)="commutateurSwitch()">{{commutateur}}</button>
 </div>
