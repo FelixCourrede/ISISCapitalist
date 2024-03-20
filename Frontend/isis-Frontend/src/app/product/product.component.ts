@@ -16,8 +16,12 @@ import { MyProgressBarComponent, Orientation } from '../progressbar.component'
 })
 export class ProductComponent implements OnChanges {
 
-  @Input()
   product: Product = new Product()
+  @Input()
+  set prod(value: Product) {
+    this.product = value;
+    if (!this.product) {this.product=new Product()}
+  }
 
   progressbarvalue = 0
 
@@ -37,6 +41,8 @@ export class ProductComponent implements OnChanges {
 
   startFabrication() {
     this.run = true
+    this.product.lastupdate = Date.now()
+    this.product.timeleft=this.product.vitesse
   }
 
   ngOnInit() {
@@ -49,12 +55,17 @@ export class ProductComponent implements OnChanges {
     else {
       let elapsetime = Date.now() - this.product.lastupdate;
       this.product.lastupdate = Date.now()
-      this.product.timeleft = elapsetime
+      this.product.timeleft -= elapsetime
+      console.log(this.product.timeleft)
       if (this.product.timeleft <= 0) {
         this.product.timeleft = 0;
         this.run = false
+        console.log("fin de prod")
         // on prévient le composant parent que ce produit a généré son revenu.
         this.notifyProduction.emit(this.product);
+        if (this.auto == true) {
+          this.startFabrication()
+        }
       }
     }
   }

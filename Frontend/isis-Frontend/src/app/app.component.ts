@@ -5,11 +5,12 @@ import { Palier, World } from './world';
 import { Product } from './world';
 import { ProductComponent } from './product/product.component';
 import { BigvaluePipe } from './bigvalue.pipe';
+import { CommonModule, NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ProductComponent, BigvaluePipe],
+  imports: [RouterOutlet, ProductComponent, BigvaluePipe, NgIf, NgFor, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -43,6 +44,15 @@ export class AppComponent {
     if (produit)
       produit.managerUnlocked = true
   }
+
+  showManagers=false
+
+  showManagersOnClick() {
+    this.showManagers = !this.showManagers
+  }
+
+
+
 
 
 }
