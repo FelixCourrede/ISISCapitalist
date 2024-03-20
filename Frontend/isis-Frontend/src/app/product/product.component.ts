@@ -25,24 +25,29 @@ export class ProductComponent implements OnChanges {
   }
 
   progressbarvalue = 0
+  maxAchat = 0
 
-  _commutateur: any;
+  _commutateur:any;
   @Input()
-  set commutateur(value: any) {
-    this._commutateur = value
-    if (this._commutateur && this.product) this.calcMaxCanBuy();
+  set commutateur(value: any){
+  this._commutateur=value
+  if(this._commutateur && this.product) this.calcMaxCanBuy();
+ 
   }
 
-  calcMaxCanBuy() {
-    let max = 0;
-    max = (this.product.croissance ** this.product.quantite) * this.product.cout;
-    return (max)
-  }
 
+calcMaxCanBuy(){
+  let max=(this.product.croissance**this.product.quantite)*this.product.cout;
+  console.log(max)
+  this.maxAchat=max;
+}
+
+_money:any;
   @Input()
-  set money(value: number) {
-    this.money = value
+  set money(value: number){
+    this._money=value
   }
+
 
 
 
