@@ -68,15 +68,9 @@ export class ProductComponent implements OnChanges {
 
   ngOnInit() {
     setInterval(() => { this.calcScore(); }, 100);
-    this.unlockManagerCheck(this.product)
   }
 
-  unlockManagerCheck(p: Product) {
-    let manager = this.world.managers.find(m => m.idcible === this.product.id);
-    if (manager.unlocked == true) {
-      this.auto = true
-    }
-  }
+
 
 
   calcScore() {
@@ -91,7 +85,7 @@ export class ProductComponent implements OnChanges {
         console.log("fin de prod")
         // on prévient le composant parent que ce produit a généré son revenu.
         this.notifyProduction.emit(this.product);
-        if (this.auto == true) {
+        if (this.product.managerUnlocked) {
           this.startFabrication()
           console.log("manager au boulot")
         }
