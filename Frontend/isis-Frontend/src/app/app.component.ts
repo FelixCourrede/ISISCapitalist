@@ -74,9 +74,8 @@ export class AppComponent {
 
   //prévient de la production d'un produit et ajoute le coût au score
   onProductionDone(p: Product) {
-      this.world.score += p.cout;
-      this.world.money += p.cout;
-      p.cout = p.cout + p.cout * p.croissance;
+      this.world.score += p.quantite*p.revenu;
+      this.world.money += p.quantite*p.revenu;
   }
 
   //engagement de managers
