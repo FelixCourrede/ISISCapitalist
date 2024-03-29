@@ -6,7 +6,7 @@ import { Product } from './world';
 import { ProductComponent } from './product/product.component';
 import { BigvaluePipe } from './bigvalue.pipe';
 import { CommonModule, NgFor, NgIf } from '@angular/common';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 
 export function commuter(valeur: any) {
   var k = new Array<any>();
@@ -30,6 +30,7 @@ export function commuter(valeur: any) {
     BigvaluePipe,
     NgIf,
     NgFor,
+    MatSnackBarModule,
     CommonModule,
   ],
   templateUrl: './app.component.html',
@@ -61,7 +62,7 @@ export class AppComponent {
 
   //gestion du monde
   world = new World();
-  constructor(private service: WebserviceService) {
+  constructor(private service: WebserviceService, private snackBar: MatSnackBar) {
     this.server = service.server;
     console.log('constructeur');
     service.getWorld().then((world) => {
@@ -74,8 +75,8 @@ export class AppComponent {
 
   //prévient de la production d'un produit et ajoute le coût au score
   onProductionDone(p: Product) {
-      this.world.score += p.quantite*p.revenu;
-      this.world.money += p.quantite*p.revenu;
+    this.world.score += p.quantite * p.revenu;
+    this.world.money += p.quantite * p.revenu;
   }
 
   //engagement de managers
@@ -84,8 +85,12 @@ export class AppComponent {
     manager.unlocked = true;
     let produit = this.world.products.find((p) => p.id === manager.idcible);
     if (produit) produit.managerUnlocked = true;
-  }
+    this.popMessage("Héros engagé")
 
+  }
+  popMessage(message: string): void {
+    this.snackBar.open(message, "", { duration: 2000 })
+  }
   //pour montrer ou non les managers, upgrades et patrons dans le html
   showManagers = false
   showUpgrades = false
@@ -94,12 +99,12 @@ export class AppComponent {
   showManagersOnClick() {
     this.showManagers = !this.showManagers;
   }
-/*
-  onUsernameChanged() {
-    this.username = localStorage.getItem("username");
-    localStorage.setItem("username", this.username);
-  }
-  */
+  /*
+    onUsernameChanged() {
+      this.username = localStorage.getItem("username");
+      localStorage.setItem("username", this.username);
+    }
+    */
 
 
 
