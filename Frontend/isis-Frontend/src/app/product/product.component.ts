@@ -27,31 +27,31 @@ export class ProductComponent implements OnChanges {
 
   progressbarvalue = 0
   maxAchat = 0
-  coutTotal= 0
+  coutTotal = 0
 
   //Gestion du commutateur
-  _commutateur:any;
+  _commutateur: any;
   @Input()
-  set commutateur(value: any){
-  this._commutateur=value
-  if(this._commutateur && this.product) this.calcMaxCanBuy();
- 
+  set commutateur(value: any) {
+    this._commutateur = value
+    if (this._commutateur && this.product) this.calcMaxCanBuy();
+
   }
 
-  getMaxAchat(){
+  getMaxAchat() {
     return this.maxAchat
   }
 
-calcMaxCanBuy(){
-  let max=(this.product.croissance**this.product.quantite)*this.product.cout;
-  this.maxAchat=max;
-}
+  calcMaxCanBuy() {
+    let max = (this.product.croissance ** this.product.quantite) * this.product.cout;
+    this.maxAchat = max;
+  }
 
-//calcul de l'argent en possession
-_money:any;
+  //calcul de l'argent en possession
+  _money: any;
   @Input()
-  set money(value: number){
-    this._money=value
+  set money(value: number) {
+    this._money = value
   }
 
 
@@ -75,13 +75,13 @@ _money:any;
   startFabrication() {
     this.run = true
     this.product.lastupdate = Date.now()
-    if (this._commutateur=='Max'){
-      this.product.timeleft=this.product.vitesse*this.maxAchat
-      let coutTotal= this.product.cout*this.maxAchat
+    if (this._commutateur == 'Max') {
+      this.product.timeleft = this.product.vitesse * this.maxAchat
+      let coutTotal = this.product.cout * this.maxAchat
     }
-    else{
-      this.product.timeleft = this.product.vitesse*this._commutateur
-      let coutTotal=this.product.cout*this.commutateur
+    else {
+      this.product.timeleft = this.product.vitesse * this._commutateur
+      let coutTotal = this.product.cout * this.commutateur
     }
 
     this.notifyCost.emit(this.coutTotal)
@@ -122,7 +122,7 @@ _money:any;
   @Output()
   notifyProduction: EventEmitter<Product> = new
     EventEmitter<Product>();
-  
-    @Output()
+
+  @Output()
   notifyCost: EventEmitter<number> = new EventEmitter<number>()
 }
