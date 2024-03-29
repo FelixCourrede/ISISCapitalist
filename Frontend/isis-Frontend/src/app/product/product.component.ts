@@ -38,12 +38,9 @@ export class ProductComponent implements OnChanges {
 
   }
 
-<<<<<<< Updated upstream
   getMaxAchat() {
     return this.maxAchat
   }
-=======
->>>>>>> Stashed changes
 
   calcMaxCanBuy() {
     let max = (this.product.croissance ** this.product.quantite) * this.product.cout;
