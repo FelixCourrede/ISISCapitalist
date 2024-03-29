@@ -106,7 +106,7 @@
     <app-product [money]="world.money" [prod]="world.products[2]" (notifyProduction)="onProductionDone($event)"
       [commutateur]="commutateur" />
     <app-product [money]="world.money" [prod]="world.products[3]" (notifyProduction)="onProductionDone($event)"
-      [commutateur]="commutateur" />
+      [commutateur]="commutateur" (notifyCost)="achat($event)" />
     <app-product [money]="world.money" [prod]="world.products[4]" (notifyProduction)="onProductionDone($event)"
       [commutateur]="commutateur" />
     <app-product [money]="world.money" [prod]="world.products[5]" (notifyProduction)="onProductionDone($event)"

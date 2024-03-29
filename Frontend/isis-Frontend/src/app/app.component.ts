@@ -50,12 +50,10 @@ export class AppComponent {
     for (let k = 0; k < 3; k++) {
       if (this.commutateur == this.valeurCommutateur[k]) {
         this.commutateur = this.valeurCommutateur[k + 1]
-        console.log(this.commutateur)
         return (this.commutateur)
       }
     }
     this.commutateur = 1;
-    console.log(this.commutateur)
     return (this.commutateur)
   }
 
@@ -70,6 +68,10 @@ export class AppComponent {
     });
   }
 
+  achat(cout: number){
+    this.world.money=this.world.money-cout
+    
+  }
 
 
   //prévient de la production d'un produit et ajoute le coût au score
@@ -100,10 +102,4 @@ export class AppComponent {
     localStorage.setItem("username", this.username);
   }
   */
-
-
-
-
-
-
 }

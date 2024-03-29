@@ -54,8 +54,6 @@ export class ProductComponent implements OnChanges {
     this._money = value
   }
 
-
-
   //prep de l'augmentation du score
   run = false
   auto = false
@@ -84,8 +82,7 @@ export class ProductComponent implements OnChanges {
       let coutTotal = this.product.cout * this.commutateur
     }
 
-    this.notifyCost.emit(this.coutTotal)
-
+    this.notifyCost.emit(this.maxAchat)
   }
 
   //initialisation de la classe
