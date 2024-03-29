@@ -70,6 +70,7 @@ export class AppComponent {
   }
 
   achat(cout: number){
+    console.log(cout)
     this.world.money=this.world.money-cout
     
   }
