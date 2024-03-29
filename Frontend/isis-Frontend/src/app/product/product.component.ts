@@ -85,9 +85,11 @@ export class ProductComponent implements OnChanges {
     else {
       this.product.timeleft = this.product.vitesse * this._commutateur
       let coutTotal = this.product.cout * this.commutateur
+      console.log(coutTotal)
       this.notifyCost.emit(coutTotal)
     }
   }
+
 
   //initialisation de la classe
   ngOnInit() {
@@ -102,7 +104,6 @@ export class ProductComponent implements OnChanges {
       let elapsetime = Date.now() - this.product.lastupdate;
       this.product.lastupdate = Date.now()
       this.product.timeleft -= elapsetime
-      console.log(this.product.timeleft)
       if (this.product.timeleft <= 0) {
         this.product.timeleft = 0;
         this.run = false
