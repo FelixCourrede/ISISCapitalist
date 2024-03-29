@@ -38,9 +38,12 @@ export class ProductComponent implements OnChanges {
 
   }
 
+<<<<<<< Updated upstream
   getMaxAchat() {
     return this.maxAchat
   }
+=======
+>>>>>>> Stashed changes
 
   calcMaxCanBuy() {
     let max = (this.product.croissance ** this.product.quantite) * this.product.cout;
@@ -72,8 +75,11 @@ export class ProductComponent implements OnChanges {
   //démarrage fabrication au début
   startFabrication() {
     this.run = true
-    console.log(this._commutateur)
     this.product.lastupdate = Date.now()
+    this.calculCout()
+  }
+
+  calculCout(){
     if (this._commutateur == 'Max') {
       this.product.timeleft = this.product.vitesse * this.maxAchat
       let coutTotal = this.product.cout * this.maxAchat
@@ -82,11 +88,8 @@ export class ProductComponent implements OnChanges {
     else {
       this.product.timeleft = this.product.vitesse * this._commutateur
       let coutTotal = this.product.cout * this.commutateur
-      console.log(coutTotal)
       this.notifyCost.emit(coutTotal)
     }
-  
-
   }
 
   //initialisation de la classe
@@ -102,6 +105,7 @@ export class ProductComponent implements OnChanges {
       let elapsetime = Date.now() - this.product.lastupdate;
       this.product.lastupdate = Date.now()
       this.product.timeleft -= elapsetime
+      console.log(this.product.timeleft)
       if (this.product.timeleft <= 0) {
         this.product.timeleft = 0;
         this.run = false
