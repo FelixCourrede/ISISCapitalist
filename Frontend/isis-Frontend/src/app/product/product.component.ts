@@ -43,7 +43,7 @@ export class ProductComponent implements OnChanges {
   }
 
   calcMaxCanBuy() {
-    let max = (this.product.croissance ** this.product.quantite) * this.product.cout;
+    let max = Math.floor((this.product.croissance ** this.product.quantite) * this.product.cout);
     this.maxAchat = max;
   }
 
