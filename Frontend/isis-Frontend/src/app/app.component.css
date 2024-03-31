@@ -3,6 +3,10 @@
     grid-template-columns: 25% 25% 30% 20%;
 }
 
+p{
+    padding-left: 50px;
+    padding-right: 0%;
+}
 .main {
     display: grid;
     grid-template-columns: 20% 80%;
@@ -24,3 +28,14 @@
     top:10; /* a 10% du haut */
     left:20%; /* a 20% de la gauche */
     }
+.app-product{
+
+}
+#commutateur{
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    height: 25px
+}
+span { display: flex; 
+    justify-content: center }

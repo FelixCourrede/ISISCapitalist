@@ -80,14 +80,16 @@ export class ProductComponent implements OnChanges {
     if (this._commutateur == 'Max') {
       this.product.timeleft = this.product.vitesse * this.maxAchat
       let coutTotal = this.product.cout * this.maxAchat
-      console.log(coutTotal)
       this.notifyCost.emit(coutTotal)
+      this.product.cout=this.product.cout+(this.maxAchat*this.product.croissance)
+      console.log(this.product.cout)
     }
     else {
       this.product.timeleft = this.product.vitesse * this._commutateur
       let coutTotal = this.product.cout * this._commutateur
-      console.log(coutTotal)
       this.notifyCost.emit(coutTotal)
+      this.product.cout=this.product.cout+(this._commutateur*this.product.croissance)
+      console.log(this.product.cout)
     }
   }
 
