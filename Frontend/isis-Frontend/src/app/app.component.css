@@ -1,6 +1,13 @@
+#worldname{
+    background-color: #2c4762;
+}
 .header {
     display: grid;
     grid-template-columns: 25% 25% 30% 20%;
+    background-color: #2c4762;
+}
+.body{
+    background-color: #2c4762;
 }
 
 p{
@@ -10,13 +17,20 @@ p{
 .main {
     display: grid;
     grid-template-columns: 20% 80%;
+    background-image: url("../Rogné 5.jpg");
+    background-repeat: no-repeat;
 }
 
 .product {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 10fr 10fr;
+    height: 668px
+
 }
 
+app-product{
+    padding-top:100px;
+}
 .modal {
     position: fixed; /* reste en place */
     z-index: 2; /* au dessus du reste */
@@ -39,3 +53,4 @@ p{
 }
 span { display: flex; 
     justify-content: center }
+

@@ -1,12 +1,12 @@
 <p>{{product.name}}</p>
 <input type="button" value ="icône placeholder" (click)="startFabrication()"/>
-<app-my-progress-bar [run]="run" [auto]="product.managerUnlocked"
+<div id="Barre"><app-my-progress-bar  [run]="run" [auto]="product.managerUnlocked"
                frontcolor="#008800"
-               backcolor="#FFFFFF"
+               backcolor="#2c4762"
                [orientation]="orientation" 
                [vitesse]="product.vitesse"
                [initialValue]="initialValue">
-</app-my-progress-bar>
+</app-my-progress-bar></div>
 
 
 

@@ -3,3 +3,11 @@
     height: 100px;
     border-radius: 50%
     }
+
+#Barre{
+    height: 20px;
+    background-color:#2c4762;
+    width: 200px;
+    border-width: 2px;
+    border-style: solid;
+    }
