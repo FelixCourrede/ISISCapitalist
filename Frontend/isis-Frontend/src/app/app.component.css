@@ -58,7 +58,7 @@ app-product {
     display: flex;
     flex-direction: column; /* Pour aligner les éléments verticalement */
     align-items: center; /* Pour centrer les éléments horizontalement */
-    padding-bottom: 10px;
+    padding-bottom: 5px;
 
 }
 .title{
