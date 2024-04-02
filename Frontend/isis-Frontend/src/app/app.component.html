@@ -2,7 +2,6 @@
 <div class="header">
   <img [attr.src]="server+'/'+world.logo" />
   <span class="highlights" [innerHTML]="world.money | bigvalue"></span>
-  <span class="highlights" id="multiplier"> {{world.angelbonus}} </span>
   <span class="highlights" [innerHTML]="world.score | bigvalue"></span>
   <!--rajouter l'ID du joueur-->
   <button id="commutateur" (click)="commutateurSwitch()">{{commutateur}}</button>
