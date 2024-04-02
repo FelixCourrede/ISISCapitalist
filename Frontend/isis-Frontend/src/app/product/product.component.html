@@ -1,7 +1,7 @@
-<p>{{product.name}}</p>
-<input type="button" value ="Achetez x{{_commutateur}}" (click)="startFabrication()"/>
+<p class="item">{{product.name}}</p>
+<input type="button" class="buybutton" value ="Buy !" (click)="startFabrication()"/>
 <div id="Barre"><app-my-progress-bar  [run]="run" [auto]="product.managerUnlocked"
-               frontcolor="#008800"
+               frontcolor="#6598ca"
                backcolor="#2c4762"
                [orientation]="orientation" 
                [vitesse]="product.vitesse"

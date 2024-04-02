@@ -1,19 +1,25 @@
-#worldname{
-    background-color: #2c4762;
-}
-.header {
-    display: grid;
-    grid-template-columns: 25% 25% 30% 20%;
-    background-color: #2c4762;
-}
-.body{
+#worldname {
     background-color: #2c4762;
 }
 
-p{
+.header {
+    display: grid;
+    grid-template-columns: 20% 20% 30% 20% 10%;
+    background-color: #2c4762;
+    border: 2px solid rgb(23, 2, 109);
+    align-items: center;
+}
+
+.body {
+    background-color: #2c4762;
+    border: 2px solid rgb(23, 2, 109)
+}
+
+p {
     padding-left: 50px;
     padding-right: 0%;
 }
+
 .main {
     display: grid;
     grid-template-columns: 20% 80%;
@@ -25,32 +31,182 @@ p{
     display: grid;
     grid-template-columns: 10fr 10fr;
     height: 668px
-
 }
 
-app-product{
-    padding-top:100px;
+app-product {
+    padding-top: 50px;
 }
+
 .modal {
-    position: fixed; /* reste en place */
-    z-index: 2; /* au dessus du reste */
-    width: 800px; /* largeur */
-    height: 800px; /* hauteur */
-    overflow: auto; /* barre de scroll si besoin */
-    background-color: white; /* opaque */
+    position: fixed;
+    /* reste en place */
+    z-index: 2;
+    /* au dessus du reste */
+    width: 800px;
+    /* largeur */
+    height: 800px;
+    /* hauteur */
+    overflow: auto;
+    /* barre de scroll si besoin */
+    background-color: rgb(182, 188, 232);
+    /* opaque */
     border: solid;
-    top:10; /* a 10% du haut */
-    left:20%; /* a 20% de la gauche */
-    }
-.app-product{
+    top: 10;
+    /* a 10% du haut */
+    left: 20%;
+    /* a 20% de la gauche */
+    display: flex;
+    flex-direction: column; /* Pour aligner les éléments verticalement */
+    align-items: center; /* Pour centrer les éléments horizontalement */
+    padding-bottom: 10px;
 
 }
-#commutateur{
+.title{
+    padding: 15px;
+    /* Vous pouvez ajuster la valeur selon vos besoins */
+    font-size: 30px;
+    /* Taille de police de 50 pixels */
+    font-family: 'Lordish-Regular';
+}
+.spacingmanagers{
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Pour centrer les éléments horizontalement */
+
+}
+
+.managers{
+    background-color: rgb(118, 138, 146);
+    border: 2px solid rgb(8, 8, 82);
+    /* Vous pouvez ajuster la valeur selon vos besoins */
+    font-size: 20px;
+    /* Taille de police de 50 pixels */
+    font-family: 'Lordish-Regular';
+    display: flex;
+    flex-direction: column; /* Pour aligner les éléments horizontalement */
+    align-items: center; /* Pour centrer les éléments horizontalement */
+    width:200px;
+    padding:10px;
+
+}
+
+.app-product {}
+
+#commutateur {
     width: 50px;
     display: flex;
     justify-content: center;
-    height: 25px
+    align-items: center;
+    height: 25px;
+    background-color: #8cacd2;
 }
-span { display: flex; 
-    justify-content: center }
 
+span {
+    display: flex;
+    justify-content: center
+}
+
+.bouton-custom {
+    width: 120px;
+    /* Vous pouvez ajuster la largeur selon vos besoins */
+    height: 40px;
+    /* Vous pouvez ajuster la hauteur selon vos besoins */
+    background-color: #8cacd2;
+    /* Marron clair */
+    font-family: 'Lordish-Regular';
+    /* Police Lordish */
+    font-size: 16px;
+    /* Vous pouvez ajuster la taille de la police selon vos besoins */
+    color: rgb(0, 0, 0);
+    /* Couleur du texte */
+    border: none;
+    /* Supprime les bordures */
+    border-radius: 5px;
+    /* Ajoute un peu de courbure aux coins */
+    cursor: pointer;
+    /* Change le curseur en main lorsqu'il survole le bouton */
+    outline: none;
+    /* Supprime le contour du bouton lorsqu'il est cliqué */
+    transition: background-color 0.3s;
+    /* Ajoute une transition douce lors du changement de couleur de fond */
+    margin-bottom: 20px;
+}
+
+.bouton-custom:hover {
+    background-color: #6e7c88;
+    /* Marron clair plus foncé au survol */
+}
+
+.bouton-custom:last-child {
+    margin-bottom: 0;
+    /* Supprime le margin-bottom pour le dernier bouton */
+}
+
+.titre {
+    border: 5px solid rgb(23, 2, 109);
+    background-color: lightblue;
+    padding: 15px;
+    color: antiquewhite;
+    /* Vous pouvez ajuster la valeur selon vos besoins */
+    font-size: 50px;
+    /* Taille de police de 50 pixels */
+    font-family: 'Lordish-Regular';
+}
+
+.menu {
+    background-color: rgb(57, 77, 85);
+    border: 2px solid rgb(8, 8, 82);
+    /* Vous pouvez ajuster la valeur selon vos besoins */
+    font-size: 20px;
+    /* Taille de police de 50 pixels */
+    font-family: 'Lordish-Regular';
+    display: flex;
+    flex-direction: column; /* Pour aligner les éléments verticalement */
+    align-items: center; /* Pour centrer les éléments horizontalement */
+}
+
+.highlights {
+    padding: 15px;
+    /* Vous pouvez ajuster la valeur selon vos besoins */
+    font-size: 20px;
+    /* Taille de police de 50 pixels */
+    font-family: 'Lordish-Regular';
+    color: antiquewhite;
+    text-align: 'center';
+    display: flex;
+    flex-direction: column; /* Pour aligner les éléments verticalement */
+    align-items: center; /* Pour centrer les éléments horizontalement */
+}
+.hirebutton{
+    width: 80px;
+    /* Vous pouvez ajuster la largeur selon vos besoins */
+    height: 40px;
+    /* Vous pouvez ajuster la hauteur selon vos besoins */
+    background-color: #00387d;
+    /* Marron clair */
+    font-family: 'Lordish-Regular';
+    /* Police Lordish */
+    font-size: 16px;
+    /* Vous pouvez ajuster la taille de la police selon vos besoins */
+    color: rgb(255, 255, 255);
+    /* Couleur du texte */
+    border: none;
+    /* Supprime les bordures */
+    border-radius: 5px;
+    /* Ajoute un peu de courbure aux coins */
+    cursor: pointer;
+    /* Change le curseur en main lorsqu'il survole le bouton */
+    outline: none;
+    /* Supprime le contour du bouton lorsqu'il est cliqué */
+    transition: background-color 0.3s;
+    /* Ajoute une transition douce lors du changement de couleur de fond */
+    margin-bottom: 20px;  
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.hirebutton:hover {
+    background-color: #6e7c88;
+    /* Marron clair plus foncé au survol */
+}

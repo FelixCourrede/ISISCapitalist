@@ -1,26 +1,25 @@
-<span id="worldname"> {{world.name}} </span>
+<span id="worldname" class="titre"> {{world.name}} </span>
 <div class="header">
-  <img src="../LogoMonde.png"/>
-  <span [innerHTML]="world.money | bigvalue"> </span>
-  <span id="multiplier"> {{world.angelbonus}} </span>
-  <span [innerHTML]="world.score | bigvalue"> </span>
+  <img [attr.src]="server+'/'+world.logo" />
+  <span class="highlights" [innerHTML]="world.money | bigvalue"></span>
+  <span class="highlights" id="multiplier"> {{world.angelbonus}} </span>
+  <span class="highlights" [innerHTML]="world.score | bigvalue"></span>
   <!--rajouter l'ID du joueur-->
-  <p>Bouton commutateur:</p>
   <button id="commutateur" (click)="commutateurSwitch()">{{commutateur}}</button>
 </div>
 <div class="main">
-  <div>
-    <p>liste des boutons de menu</p>
+  <div class="menu">
+    <p class="highlights">Améliorez votre campagne !</p>
 
 
-    <input type="button" id="manaButton" value="Héros" (click)="showManagers=!showManagers" />
+    <input type="button" id="manaButton" value="Héros" class="bouton-custom" (click)="showManagers=!showManagers" />
 
     <div *ngIf="showManagers" class="modal">
       <div>
         <h1 class="title">Engagez vos héros maintenant</h1>
       </div>
-      <div>
-        <div *ngFor="let manager of world.managers">
+      <div class="spacingmanagers">
+        <div class="managers" *ngFor="let manager of world.managers">
           <div *ngIf="!manager.unlocked" class="managerslayout">
             <div>
               <div class="logo"><img class="round" [attr.src]="server+manager.logo" /> </div>
@@ -28,7 +27,7 @@
             <div>
               <div class="managername"> {{ manager.name}} </div>
               <div class="managercible"> {{ world.products[manager.idcible-1].name }} </div>
-              <div class="managercost"> {{ manager.seuil}} </div>
+              <div class="managercost"> {{ manager.seuil}} po </div>
             </div>
             <div>
               <div class="hirebutton" (click)="hireManager(manager)"
@@ -36,7 +35,7 @@
             </div>
           </div>
         </div>
-        <button class="closebutton" mat-raised- button color="primary"
+        <button class="closebutton" class="bouton-custom" mat-raised- button color="primary"
           (click)="showManagers = !showManagers">Close</button>
       </div>
     </div>
@@ -44,13 +43,13 @@
 
 
 
-    <input type="button" id="upgradeButton" value="Améliorations" (click)="showUpgrades=!showUpgrades" />
+    <input type="button" id="upgradeButton" value="Améliorations" class="bouton-custom" (click)="showUpgrades=!showUpgrades" />
     <div *ngIf="showUpgrades" class="modal">
       <div>
         <h1 class="title">Améliorez vos ressources</h1>
       </div>
-      <div>
-        <div *ngFor="let upgrade of world.upgrades">
+      <div class="spacingmanagers">
+        <div class="managers" *ngFor="let upgrade of world.upgrades">
           <div *ngIf="!upgrade.unlocked" class="upgradeslayout">
             <div>
               <div class="logo"><img class="round" [attr.src]="server+upgrade.logo" /> </div>
@@ -58,42 +57,42 @@
             <div>
               <div class="upgradename"> {{ upgrade.name}} </div>
               <div class="upgradecible"> {{ world.products[upgrade.idcible-1].name }} </div>
-              <div class="upgradecost"> {{ upgrade.seuil}} </div>
+              <div class="upgradecost"> {{ upgrade.seuil}} po</div>
             </div>
             <div>
-              <div class="buybutton"
+              <div class="hirebutton"
                 [ngClass]="{'selectable' : (world.money >= upgrade.seuil)}">Buy !</div>
             </div>
           </div>
         </div>
-        <button class="closebutton" mat-raised- button color="primary"
+        <button class="bouton-custom" mat-raised- button color="primary"
           (click)="showUpgrades = !showUpgrades">Close</button>
       </div>
     </div>
 
 
-    <input type="button" id="angelButton" value="Patrons" (click)="showAngels=!showAngels" />
+    <input type="button" id="angelButton" value="Patrons" class="bouton-custom" (click)="showAngels=!showAngels" />
     <div *ngIf="showAngels" class="modal">
       <div>
         <h1 class="title">Vendez vôtre âme</h1>
       </div>
-      <div>
-        <div *ngFor="let angel of world.angelupgrades">
+      <div class="spacingmanagers">
+        <div class="managers" *ngFor="let angel of world.angelupgrades">
           <div *ngIf="!angel.unlocked" class="angelslayout">
             <div>
               <div class="logo"><img class="round" [attr.src]="server+angel.logo" /> </div>
             </div>
             <div>
               <div class="angelname"> {{ angel.name}} </div>
-              <div class="angelcost"> {{ angel.seuil}} </div>
+              <div class="angelcost"> {{ angel.seuil}} po</div>
             </div>
             <div>
-              <div class="buybutton"
+              <div class="hirebutton"
                 [ngClass]="{'selectable' : (world.money >= angel.seuil)}">Buy !</div>
             </div>
           </div>
         </div>
-        <button class="closebutton" mat-raised- button color="primary"
+        <button class="bouton-custom" mat-raised- button color="primary"
           (click)="showAngels = !showAngels">Close</button>
       </div>
     </div>
