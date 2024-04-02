@@ -1,8 +1,9 @@
 export class World {
     name = '';
     logo = '';
-    money = 0;
+    money = 100;
     score = 0;
+    
     totalangels = 0;
     activeangels = 0;
     angelbonus = 0;
